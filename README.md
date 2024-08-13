@@ -21,8 +21,8 @@ Aquara Discord Bot, Discord sunucuları için geliştirilen güçlü ve özelle�
 
 1. Bu projeyi bilgisayarınıza klonlayın:
     ```bash
-    git clone https://github.com/kullaniciadi/aquara-bot.git
-    cd aquara-bot
+    git clone https://github.com/raviwen/new-v14-prefix-base.git
+    cd new-v14-prefix-base
     ```
 
 2. Gerekli bağımlılıkları yükleyin:
@@ -33,15 +33,21 @@ Aquara Discord Bot, Discord sunucuları için geliştirilen güçlü ve özelle�
 3. `config.js` dosyasını düzenleyin ve kendi `Discord Bot Token` ve `MongoDB URI` bilgilerinizi ekleyin:
     ```javascript
     module.exports = {
-      bot: {
-        Token: 'YOUR_BOT_TOKEN',
-        Mongo: 'YOUR_MONGODB_URI',
-        Guild: 'YOUR_GUILD_ID',
-        prefixes: ['!', '?'], // Kullanmak istediğiniz prefixler
-        devs: ['YOUR_USER_ID'] // Geliştirici ID'lerinizi buraya ekleyin
-      },
-      ownerRoles: ['OWNER_ROLE_ID'], // Sunucu sahibi rollerini buraya ekleyin
-      staffRoles: ['STAFF_ROLE_ID'], // Sunucu personeli rollerini buraya ekleyin
+        Bot: {
+            Guild: 'YOUR_GUILD_ID', // Sunucunuzun ID'si
+            Token: 'YOUR_BOT_TOKEN', // Botunuzun tokeni
+            Mongo: 'YOUR_MONGODB_URI', // MongoDB bağlantı URI'si
+            Prefix: ["!", "-", ".", "_"], // Kullanmak istediğiniz prefixler
+            BotVoice: 'YOUR_VOICE_CHANNEL_ID', // Botun bağlanacağı ses kanalı ID'si (isteğe bağlı)
+        },
+        Roles: {
+            BotDev: ['YOUR_DEV_ROLE_ID'], // Geliştirici rolleri
+            OwnerRoles: ['YOUR_OWNER_ROLE_ID'], // Sunucu sahibi rolleri
+            StaffRoles: ['YOUR_STAFF_ROLE_ID'], // Sunucu personeli rolleri
+        },
+        Channels: {
+            CommandLog: 'YOUR_COMMAND_LOG_CHANNEL_ID', // Komut logları için kullanılacak kanal ID'si
+        }
     };
     ```
 
